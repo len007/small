@@ -1,0 +1,32 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/about/about"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "黎川特产",
+    "navigationBarTextStyle":"black"
+  },
+  "tabBar":{
+    "position":"bottom",
+    "borderStyle":"black",
+    "selectedColor": "green",
+    "color": "#000",
+    "backgroundColor": "#fff",
+    "list": [
+      {
+        "pagePath":"pages/index/index",
+        "text": "主页",
+        "iconPath":"./img/home.png",
+        "selectedIconPath": "./img/home.png"
+      },
+      {
+        "pagePath":"pages/about/about",
+        "text":"我",
+        "iconPath": "./img/about1.png",
+        "selectedIconPath": "./img/about.png"
+      }]
+  }
+}

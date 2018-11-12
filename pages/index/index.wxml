@@ -1,0 +1,11 @@
+<!--index.wxml-->
+<view class="body">
+  <view class="userinfo" wx:if="{{!hasUserInfo && canIUse}}">
+    <button open-type="getUserInfo" bindgetuserinfo="getUserInfo">获取头像昵称</button>
+  </view>
+  <view class="container" wx:else="{{!hasUserInfo && canIUse}}">
+    <block class="block" wx:for="{{products}}" wx:key="unique">
+    {{item.name}}
+    </block>
+  </view>
+</view>
