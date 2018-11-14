@@ -10,27 +10,50 @@ Page({
     canIUse: wx.canIUse('button.open-type.getUserInfo'),
     products:[
       {
-        name:"苹果",
-        url:"../../img/about.png"
+        id: 1,
+        name:"香菇",
+        url:"../../img/xg.jpg"
+      }, {
+        id: 2,
+        name: "米粉",
+        url: "../../img/mf.jpg"
+      }, {
+        id: 3,
+        name: "灌芯糖",
+        url: "../../img/gxt.jpg"
+      }, {
+        id: 4,
+        name: "香菇",
+        url: "../../img/xg.jpg"
+      }, {
+        id: 5,
+        name: "米粉",
+        url: "../../img/mf.jpg"
+      }, {
+        id: 6,
+        name: "灌芯糖",
+        url: "../../img/gxt.jpg"
+      }, {
+        id: 7,
+        name: "香菇",
+        url: "../../img/xg.jpg"
+      }, {
+        id: 8,
+        name: "米粉",
+        url: "../../img/mf.jpg"
+      }, {
+        id: 9,
+        name: "灌芯糖",
+        url: "../../img/gxt.jpg"
       }
     ]
   },
-  //事件处理函数
-  bindViewTap: function() {
-    wx.redirectTo({
-      url: '../logs/logs',
-    })
-    // wx.navigateTo({
-    //   url: '../logs/logs',
-      
-
-    // })
-  },
+  
   onLoad: function () {
     if (app.globalData.userInfo) {
       this.setData({
         userInfo: app.globalData.userInfo,
-        hasUserInfo: true
+        hasUserInfo: true,
       })
     } else if (this.data.canIUse){
       // 由于 getUserInfo 是网络请求，可能会在 Page.onLoad 之后才返回

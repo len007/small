@@ -1,7 +1,9 @@
 {
   "pages":[
     "pages/index/index",
-    "pages/about/about"
+    "pages/about/about",
+    "pages/cart/cart",
+    "pages/detail/detail"
   ],
   "window":{
     "backgroundTextStyle":"light",
@@ -9,24 +11,31 @@
     "navigationBarTitleText": "黎川特产",
     "navigationBarTextStyle":"black"
   },
-  "tabBar":{
-    "position":"bottom",
-    "borderStyle":"black",
-    "selectedColor": "green",
+  "tabBar": {
+    "position": "bottom",
+    "borderStyle": "black",
+    "selectedColor": "#2f9bfe",
     "color": "#000",
     "backgroundColor": "#fff",
     "list": [
       {
-        "pagePath":"pages/index/index",
+        "pagePath": "pages/index/index",
         "text": "主页",
-        "iconPath":"./img/home.png",
-        "selectedIconPath": "./img/home.png"
+        "iconPath": "./img/home.png",
+        "selectedIconPath": "./img/home-cur.png"
       },
       {
-        "pagePath":"pages/about/about",
-        "text":"我",
-        "iconPath": "./img/about1.png",
-        "selectedIconPath": "./img/about.png"
-      }]
+        "pagePath": "pages/cart/cart",
+        "text": "消息",
+        "iconPath": "./img/cart.png",
+        "selectedIconPath": "./img/cart-cur.png"
+      },
+      {
+        "pagePath": "pages/about/about",
+        "text": "我",
+        "iconPath": "./img/about.png",
+        "selectedIconPath": "./img/about-cur.png"
+      }
+    ]
   }
 }

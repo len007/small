@@ -1,6 +1,10 @@
 //app.js
 App({
   onLaunch: function () {
+    wx.cloud.init({
+      env: 'len007-4fe07e',
+      traceUser:true
+    })
     // 展示本地存储能力
     var logs = wx.getStorageSync('logs') || []
     logs.unshift(Date.now())
@@ -10,6 +14,13 @@ App({
     wx.login({
       success: res => {
         // 发送 res.code 到后台换取 openId, sessionKey, unionId
+        wx.cloud.callFunction({
+          name: "getOpenId",
+          data:{}
+        }).then(res=>{
+          this.globalData.openid = res.result["OPENID"];
+          // console.log(this.globalData);
+        }).catch(err=>{});
       }
     })
     // 获取用户信息
@@ -34,6 +45,8 @@ App({
     })
   },
   globalData: {
-    userInfo: null
+    userInfo: null,
+    appid: "wx89d147cca3fc7464",
+    openid:""
   }
 })

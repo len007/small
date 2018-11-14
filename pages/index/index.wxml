@@ -4,8 +4,13 @@
     <button open-type="getUserInfo" bindgetuserinfo="getUserInfo">获取头像昵称</button>
   </view>
   <view class="container" wx:else="{{!hasUserInfo && canIUse}}">
-    <block class="block" wx:for="{{products}}" wx:key="unique">
-    {{item.name}}
-    </block>
+    <view class="block" wx:for="{{products}}" wx:key="unique">
+      <navigator url="{{'/pages/detail/detail?id='+item.id}}" class="naviga">
+      <image src="{{item.url}}" class="btn-img"></image>
+      <block>{{item.name}}</block>
+    </navigator>
+      
+    </view>
   </view>
+    
 </view>

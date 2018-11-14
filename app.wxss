@@ -1,24 +1,40 @@
 /**app.wxss**/
-.body{
+
+.body {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  padding: 200rpx;
+  padding: 25rpx;
   box-sizing: border-box;
 }
+
 .container {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
   justify-content: space-between;
   box-sizing: border-box;
-} 
+  flex-wrap: wrap;
+  width: 100%;
+}
+
 .block {
-  height: 120rpx;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
   box-sizing: border-box;
-} 
+  width: 50%;
+  padding: 20rpx;
+  text-align: center;
+}
+
+.btn-img {
+  width: 310rpx;
+  height: 240rpx;
+}
+
+.naviga:hover {
+  cursor: pointer;
+}

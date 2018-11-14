@@ -4,3 +4,17 @@
     <text class="log-item">{{index + 1}}. {{log}}</text>
   </block>
 </view>
+<view class="bottom">
+    <navigator  url="/pages/index/index" open-type='redirect' class="naviga">
+      <image src="../../img/home.png" class="btn-img"></image>
+      <block>主页</block>
+    </navigator>
+    <navigator url="/pages/cart/cart" open-type='redirect' class="naviga">
+      <image src="../../img/cart.png" class="btn-img"></image>
+      <block>购物车</block>
+    </navigator>
+    <view class="naviga">
+      <image src="../../img/about-cur.png" class="btn-img"></image>
+      <block>我的</block>
+    </view>
+  </view>
