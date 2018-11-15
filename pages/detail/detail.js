@@ -8,6 +8,12 @@ Page({
    * 页面的初始数据
    */
   data: {
+    action: true,
+    autoplay:true,
+    circular: true,
+    interval: 5000,
+    duration: 1000,
+    imgUrls: [],
     detailId:0,
     userInfo:{},
     openid:"",
@@ -30,11 +36,18 @@ Page({
     }).get({
       success: function (res) {
         if(res.data.length>0){
+          wx.setNavigationBarTitle({
+            title: res.data[0]['name'],
+          });
+          var tmpUrls = [];
+          for (var i = 0; i < res.data[0]['imgurl'].length;i++){
+            tmpUrls.push(res.data[0]['imgurl'][i]);
+          }
           that.setData({
-            product : res.data[0]
-          })
+            product : res.data[0],
+            imgUrls : tmpUrls
+          });
         }
-        console.log(that.data.product)
       }
     })
   },
@@ -84,7 +97,23 @@ Page({
   /**
    * 用户点击右上角分享
    */
-  onShareAppMessage: function () {
-    
+  onShareAppMessage: function (res) {
+    return {
+      title: '黎川特产-'+this.data.product['name'],
+      path: '/pages/detail/detail?id=' + this.data.detailId
+    }
+  },
+  openSale : function(){
+    this.setData({
+      action: true
+    })
+  },
+  closeSale: function(){
+    this.setData({
+      action: false
+    })
+  },
+  stopBoll:function(){
+
   }
 })
