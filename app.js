@@ -1,9 +1,9 @@
 //app.js
 App({
-  onLaunch: function () {
+  onLaunch: function() {
     wx.cloud.init({
       env: 'len007-4fe07e',
-      traceUser:true
+      traceUser: true
     })
     // 展示本地存储能力
     var logs = wx.getStorageSync('logs') || []
@@ -16,11 +16,11 @@ App({
         // 发送 res.code 到后台换取 openId, sessionKey, unionId
         wx.cloud.callFunction({
           name: "getOpenId",
-          data:{}
-        }).then(res=>{
+          data: {}
+        }).then(res => {
           this.globalData.openid = res.result["OPENID"];
           // console.log(this.globalData);
-        }).catch(err=>{});
+        }).catch(err => {});
       }
     })
     // 获取用户信息
@@ -30,9 +30,9 @@ App({
           // 已经授权，可以直接调用 getUserInfo 获取头像昵称，不会弹框
           wx.getUserInfo({
             success: res => {
+              // console.log(res);
               // 可以将 res 发送给后台解码出 unionId
-              this.globalData.userInfo = res.userInfo
-
+              this.globalData.userInfo = res.userInfo;
               // 由于 getUserInfo 是网络请求，可能会在 Page.onLoad 之后才返回
               // 所以此处加入 callback 以防止这种情况
               if (this.userInfoReadyCallback) {
@@ -47,6 +47,6 @@ App({
   globalData: {
     userInfo: null,
     appid: "wx89d147cca3fc7464",
-    openid:""
+    openid: ""
   }
 })

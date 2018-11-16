@@ -48,7 +48,15 @@ Page({
       }
     ]
   },
-  
+  /**
+   * 用户点击右上角分享
+   */
+  onShareAppMessage: function (res) {
+    return {
+      title: '正宗黎川特产',
+      path: '/pages/index/index'
+    }
+  },
   onLoad: function () {
     if (app.globalData.userInfo) {
       this.setData({

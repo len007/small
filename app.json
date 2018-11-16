@@ -8,8 +8,9 @@
   "window":{
     "backgroundTextStyle":"light",
     "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "黎川特产",
-    "navigationBarTextStyle":"black"
+    "navigationBarTitleText": "正宗黎川特产",
+    "navigationBarTextStyle":"black",
+    "enablePullDownRefresh": true
   },
   "tabBar": {
     "position": "bottom",
@@ -20,15 +21,15 @@
     "list": [
       {
         "pagePath": "pages/index/index",
-        "text": "主页",
+        "text": "首页",
         "iconPath": "./img/home.png",
         "selectedIconPath": "./img/home-cur.png"
       },
       {
         "pagePath": "pages/cart/cart",
         "text": "消息",
-        "iconPath": "./img/cart.png",
-        "selectedIconPath": "./img/cart-cur.png"
+        "iconPath": "./img/mess.png",
+        "selectedIconPath": "./img/mess-cur.png"
       },
       {
         "pagePath": "pages/about/about",

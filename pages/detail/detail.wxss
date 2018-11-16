@@ -90,6 +90,8 @@
   flex-direction: row;
   justify-content: space-between;
   font-weight: normal;
+  align-items:center;
+
 }
 
 .block22 {
@@ -98,22 +100,27 @@
 }
 
 .sales-bar {
-  position: absolute;
+  position: fixed;
   bottom: 0;
   left: 0;
   right: 0;
   height: 100%;
   width: 100%;
   background: #95959599;
+  display: flex;
+  flex-flow: column;
+  justify-content: flex-end;
+  align-items: center;
 }
-.sales-bar1{
-  height: 100%;
+
+.sales-bar1 {
   width: 100%;
   display: flex;
   flex-flow: column;
   justify-content: flex-end;
   align-items: center;
 }
+
 .sale-block-break {
   width: 100%;
   background: #fff;
@@ -153,14 +160,23 @@
 .sale-block2 {
   display: flex;
   flex-flow: column;
-  align-items: center;
-  justify-content: flex-start;
+  align-items: flex-start;
+  justify-content: space-between;
+  height: 120rpx;
 }
 
 .sale-block3 {
   display: flex;
   flex-flow: row;
   align-items: center;
+  justify-content: space-between;
+  height: 120rpx;
+}
+
+.sale-blokc32 {
+  display: flex;
+  flex-flow: row;
+  align-items: flex-start;
   justify-content: flex-start;
 }
 
@@ -173,6 +189,90 @@
   width: 60rpx;
   height: 60rpx;
   position: absolute;
-  bottom: 400rpx;
+  bottom: 542rpx;
   right: 20rpx;
+}
+
+.guige {
+  width: 60rpx;
+  height: 40rpx;
+  border: 1rpx solid #f1f1f1;
+  line-height: 40rpx;
+  font-size: 28rpx;
+  text-align: center;
+  margin-left: 20rpx;
+}
+
+.guige1 {
+  width: 60rpx;
+  height: 40rpx;
+  border: 1rpx solid red;
+  line-height: 40rpx;
+  font-size: 28rpx;
+  text-align: center;
+  margin-left: 20rpx;
+}
+
+.sales-count-btn {
+  width: 100rpx;
+  height: 70rpx;
+  line-height: 70rpx;
+  text-align: center;
+  border: 1rpx solid #f1f1f1;
+}
+
+.detail-bottom {
+  display: flex;
+  flex-flow: row;
+  align-items: center;
+  justify-content: space-between;
+  height: 94rpx;
+  font-size: 28rpx;
+  text-align: center;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  box-shadow: 0px -3rpx 3rpx #ccc;
+  background: #fff;
+}
+
+.bottom1 {
+  height: 94rpx;
+  line-height: 94rpx;
+  width: 128rpx;
+  border-right: 1rpx solid #f1f1f1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 20rpx;
+  position: relative;
+}
+
+.bottom2 {
+  height: 94rpx;
+  width: 198rpx;
+  line-height: 94rpx;
+  background: #ff6950;
+}
+
+.bottom3 {
+  height: 94rpx;
+  width: 168rpx;
+  line-height: 94rpx;
+  background: #e74341;
+}
+
+.cart-count-icon {
+  position: absolute;
+  top: 6rpx;
+  right: 20rpx;
+  background: #e74341;
+  width: 30rpx;
+  height: 30rpx;
+  border-radius: 15rpx;
+  color: #fff;
+  line-height:30rpx;
+
 }

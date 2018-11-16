@@ -9,8 +9,6 @@
       <image src="{{item.url}}" class="btn-img"></image>
       <block>{{item.name}}</block>
     </navigator>
-      
     </view>
   </view>
-    
 </view>

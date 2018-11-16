@@ -22,20 +22,30 @@
     </view>
     <view class="block-detail block2">
       <view>领券</view>
-      <view>共0张</view>
+      <view>共(0)张</view>
     </view>
     <view class="block-detail block2">
       <view>销量（{{product['salesvolume']}}）</view>
       <view class="block22"></view>
-      <view>点赞（{{product['laudcount']}}）</view>
+      <view style="display:flex;" bindtap="laudProduct" data-action="{{isLauded?'b':'a'}}">
+        <image src="../../img/laud.png" style="height:60rpx;width:60rpx;"></image>
+        <p>（{{product['laudcount']}}）</p>
+      </view>
     </view>
     <view class="block-detail block2" bindtap="openSale">
       <view>选择：规格</view>
-      <view>>></view>
+      <view>></view>
+    </view>
+    <view class="block-detail block3" bindtap="openSale">
+      <p>商品介绍</p>
+      <view style="width:100%;">
+        <image class="swiper-item" wx:for="{{imgUrls}}" wx:key="*this" src="{{item}}" mode="scaleToFill"></image>
+      </view>
     </view>
   </view>
+  <view style="height:94rpx"> </view>
 </view>
-<view wx:if="{{action}}" class='sales-bar' bindtap='closeSale'>
+<view wx:if="{{action}}" class='sales-bar' catchtap='closeSale'>
   <view catchtap="stopBoll" class="sales-bar1">
     <view class="sale-block sale-block1" catchtap="test">
       <image style='width:120rpx;height:120rpx;' src="{{imgUrls[0]}}"></image>
@@ -48,14 +58,41 @@
     <view class="sale-block-break">
       <view class="break"></view>
     </view>
-    <view class="sale-block sale-block2">规格</view>
+    <view class="sale-block sale-block2">
+      <view>规格</view>
+      <view class="{{guigeChoosed?'guige1':'guige'}}">5斤</view>
+    </view>
     <view class="sale-block-break">
       <view class="break"></view>
     </view>
-    <view class="sale-block sale-block3">购买数量</view>
+    <view class="sale-block sale-block3">
+      <view>购买数量</view>
+      <view class="sale-blokc32">
+        <view class="sales-count-btn" catchtap="cutSalesCount" style="{{salesCount<2?'color:#f1f1f1':''}}">-</view>
+        <view class="sales-count-btn">{{salesCount}}</view>
+        <view class="sales-count-btn" catchtap='addSalesCount' style="{{salesCount>98?'color:#f1f1f1':''}}">+</view>
+      </view>
+    </view>
     <view class="sale-block4">
-      <button style="background:#e74341;border-radius:0;">加入购物车</button>
+      <button style="background:#e74341;border-radius:0;" catchtap="addCartRecord">加入购物车</button>
     </view>
   </view>
   <image class="delete" src="../../img/delete.png" catchtap="closeSale"></image>
+</view>
+<view class="detail-bottom"  wx:else="{{action}}">
+  <view class="bottom1" bindtap='redirectToHome'>
+    <image src="../../img/home.png" style="height:50rpx;width:50rpx;"></image>
+    <p style="line-height: 32rpx;">首页</p>
+  </view>
+  <view class="bottom1" bindtap=''>
+    <image src="../../img/mess.png" style="height:50rpx;width:50rpx;"></image>
+    <p style="line-height: 32rpx;">客服</p>
+  </view>
+  <view class="bottom1">
+    <image src="../../img/cart.png" style="height:50rpx;width:50rpx;"></image>
+    <p style="line-height: 32rpx;">购物车</p>
+    <view class="cart-count-icon">{{cartsCount}}</view>
+  </view>
+  <view class="bottom2"  bindtap="openSale">加入购物车</view>
+  <view class="bottom3">立即购买</view>
 </view>
