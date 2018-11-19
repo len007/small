@@ -1,0 +1,66 @@
+/* pages/sales/sales.wxss */
+
+.sales-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+  background: #f1f1f1;
+  height: 100%;
+}
+
+.sales-status {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  justify-content: center;
+}
+
+.sales-block {
+  width: 100%;
+  display: flex;
+  flex-flow: column;
+}
+
+.sales-detail {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  height: 160rpx;
+  margin: 30rpx 40rpx;
+}
+
+.sales-image {
+  width: 160rpx;
+  height: 160rpx;
+  margin-right: 30rpx;
+}
+
+.sales-time {
+  font-size: 28rpx;
+  width: 100%;
+  text-align: right;
+}
+
+.sales-detail1 {
+  display: flex;
+  flex-flow: column;
+  height: 100%;
+  justify-content: space-evenly;
+  width: 480rpx;
+}
+
+.sales-price {
+  color: red;
+  font-size: 28rpx;
+  width: 100%;
+  text-align: left;
+}
+
+.sales-name {
+  font-size: 30rpx;
+  overflow: hidden;
+  height: 85rpx;
+  width: 100%;
+}

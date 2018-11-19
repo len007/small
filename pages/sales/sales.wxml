@@ -1,0 +1,19 @@
+<!--pages/sales/sales.wxml-->
+<view class="sales-container">
+  <view wx:for="{{sales}}" wx:for-index="idx" class="sales-block">
+    <view class="sales-status">
+      <view wx:if="{{item['status']==1}}">拣货完毕，待出库交付快递包裹</view>
+      <view wx:if="{{item['status']==2}}">已交付快递包裹，订单号</view>
+      <view wx:if="{{item['status']==2}}" style="font-size: 28rpx;">{{item['ordernumber']}}</view>
+      <view wx:if="{{item['status']==3}}">已完成</view>
+    </view>
+    <view class="sales-detail">
+      <image src="{{item['imgurl']}}" class="sales-image"></image>
+      <view class="sales-detail1">
+        <view class="sales-name">{{item['productname']}}</view>
+        <view class="sales-price">￥{{item['prices']}}</view>
+      </view>
+    </view>
+    <view class="sales-time">{{item['purchasetime']}}</view>
+  </view>
+</view>

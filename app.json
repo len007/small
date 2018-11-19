@@ -1,9 +1,13 @@
 {
   "pages":[
-    "pages/index/index",
     "pages/about/about",
+    "pages/index/index",
+    "pages/news/news",
     "pages/cart/cart",
-    "pages/detail/detail"
+    "pages/detail/detail",
+    "pages/sales/sales",
+    "pages/suggestion/suggestion",
+    "pages/location/location"
   ],
   "window":{
     "backgroundTextStyle":"light",
@@ -26,10 +30,16 @@
         "selectedIconPath": "./img/home-cur.png"
       },
       {
-        "pagePath": "pages/cart/cart",
+        "pagePath": "pages/news/news",
         "text": "消息",
-        "iconPath": "./img/mess.png",
-        "selectedIconPath": "./img/mess-cur.png"
+        "iconPath": "./img/news.png",
+        "selectedIconPath": "./img/news-cur.png"
+      },
+      {
+        "pagePath": "pages/cart/cart",
+        "text": "购物车",
+        "iconPath": "./img/cart.png",
+        "selectedIconPath": "./img/cart-cur.png"
       },
       {
         "pagePath": "pages/about/about",

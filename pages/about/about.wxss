@@ -1,8 +1,47 @@
-.log-list {
+.about-container {
   display: flex;
   flex-direction: column;
-  padding: 40rpx;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+  background: #f1f1f1;
+  height: 100%;
 }
-.log-item {
-  margin: 10rpx;
+
+.about-block {
+  width: 750rpx;
+  height: 450rpx;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.about-bar {
+  height: 100rpx;
+  width: 100%;
+  display: flex;
+  flex-flow: row;
+  align-items: center;
+  justify-content: space-between;
+  background: #fff;
+  margin-top: 2rpx;
+}
+.about-bar-child{
+  display: flex;
+  flex-flow: row;
+  align-items: center;
+}
+.about-icon {
+  width: 40rpx;
+  height: 40rpx;
+  margin-left: 40rpx;
+  margin-right: 20rpx;
+}
+
+.about-right-icon{
+  width: 24rpx;
+  height: 40rpx;
+  justify-self: flex-end;
+  margin-right: 40rpx;
 }

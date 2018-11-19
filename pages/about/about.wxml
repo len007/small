@@ -1,20 +1,14 @@
 <!--logs.wxml-->
-<view class="container log-list">
-  <block wx:for="{{logs}}" wx:for-item="log">
-    <text class="log-item">{{index + 1}}. {{log}}</text>
-  </block>
-</view>
-<view class="bottom">
-    <navigator  url="/pages/index/index" open-type='redirect' class="naviga">
-      <image src="../../img/home.png" class="btn-img"></image>
-      <block>主页</block>
-    </navigator>
-    <navigator url="/pages/cart/cart" open-type='redirect' class="naviga">
-      <image src="../../img/cart.png" class="btn-img"></image>
-      <block>购物车</block>
-    </navigator>
-    <view class="naviga">
-      <image src="../../img/about-cur.png" class="btn-img"></image>
-      <block>我的</block>
-    </view>
+<view class="about-container">
+  <view class="about-block" style="background-image:url(../../img/bg-my.png);background-size:100%;">
+    <image src="{{userInfo['avatarUrl']}}" class="userinfo-avatar"></image>
+    <view class="userinfo-nickname">{{userInfo['nickName']}}</view>
   </view>
+  <view class="about-bar" wx:for="{{navbar}}" wx:for-index="idx" data-action="{{idx}}" bindtap='redirectFunc'>
+    <view class="about-bar-child">
+      <image src="{{item['img']}}" class="about-icon"></image>
+      <p>{{item['name']}}</p>
+    </view>
+    <image src="../../img/icon/right-icon.png" class="about-right-icon"></image>
+  </view>
+</view>

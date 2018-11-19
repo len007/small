@@ -1,6 +1,6 @@
 {
-  "navigationBarTitleText": "购物车",
   "window": {
     "enablePullDownRefresh": true
-  }
+  },
+  "navigationBarTitleText": "反馈"
 }
