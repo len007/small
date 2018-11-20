@@ -159,7 +159,11 @@ Page({
         });
       }
     }).catch(err => {
-      console.log(22);
+      wx.showToast({
+        title: '系统繁忙，请尝试重新进入',
+        icon: 'warn',
+        duration: 1000
+      });
     });
   },
   addSalesCount: function() {

@@ -1,7 +1,7 @@
 // pages/sales/sales.js
 const app = getApp();
 const db = wx.cloud.database();
-
+const util = require('../../utils/util.js');
 Page({
 
   /**
@@ -17,6 +17,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    util.util
     this.setData({
       userInfo: app.globalData.userInfo,
       openid: app.globalData.openid
@@ -26,8 +27,11 @@ Page({
       openid: this.data.openid
     }).get({
       success: function (res) {
-        console.log(res.data)
+        console.log(res.data);
         if (res.errMsg ==='collection.get:ok'&&res.data.length >= 0) {
+          for (var i = 0; i < res.data.length; i++){
+            res.data[i].purchasetime = util.formatTime(new Date(res.data[i].purchasetime));
+          }
           that.setData({
             sales: res.data
           });

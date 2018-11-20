@@ -1,1 +1,87 @@
 /* pages/location/location.wxss */
+
+.loc-container {
+  display: flex;
+  width: 100%;
+  flex-flow: column;
+  align-items: center;
+  justify-content: flex-start;
+  background: #f1f1f1;
+}
+
+.loc-block {
+  display: flex;
+  flex-flow: column;
+  width: 750rpx;
+  background: #fff;
+  margin-top: 8rpx;
+}
+
+.loc-block:last-child {
+  border-bottom: 8rpx solid #f1f1f1;
+}
+
+.new-location {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 120rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.new-location-nav {
+  background: #2f9bfe;
+  width: 400rpx;
+  height: 80rpx;
+  border-radius: 40rpx;
+  display: flex;
+  flex-flow: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.new-location-nav-image {
+  width: 30rpx;
+  height: 30rpx;
+  margin-right: 15rpx;
+}
+
+.loc-detail1 {
+  display: flex;
+  height: 60rpx;
+  align-items: center;
+}
+
+.loc-detail2 {
+  display: flex;
+  height: 60rpx;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.loc-name {
+  width: 160rpx;
+  margin-left: 20rpx;
+  font-weight: bold;
+}
+
+.loc-tel {
+  margin-right: 20rpx;
+  margin-left: 20rpx;
+}
+
+.loc-loc {
+  margin-left: 20rpx;
+  font-size: 26rpx;
+}
+
+.loc-edit-image {
+  margin-right: 20rpx;
+  width: 40rpx;
+  height: 40rpx;
+}

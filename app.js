@@ -5,7 +5,7 @@ App({
       env: 'len007-4fe07e',
       traceUser: true
     })
-
+    
     // 登录
     wx.login({
       success: res => {

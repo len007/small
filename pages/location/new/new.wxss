@@ -1,0 +1,83 @@
+.newloc-container {
+  display: flex;
+  width: 100%;
+  flex-flow: column;
+  align-items: center;
+  justify-content: flex-start;
+  background: #f1f1f1;
+}
+
+.newloc-block {
+  display: flex;
+  flex-flow: row;
+  width: 750rpx;
+  background: #fff;
+  margin-top: 2rpx;
+  align-items: center;
+}
+
+.newloc-block>label {
+  width: 180rpx;
+  text-align: left;
+  padding: 20rpx;
+}
+
+.newloc-block>input {
+  font-weight: bold;
+  width: 420rpx;
+  text-align: left;
+  padding: 20rpx;
+  overflow: hidden;
+}
+
+.newloc-block>textarea {
+  font-weight: bold;
+  height: 160rpx;
+  padding: 10px;
+  width: 420rpx;
+}
+
+.newloc-block-locs {
+  font-weight: bold;
+  width: 420rpx;
+  text-align: left;
+  padding: 20rpx;
+  overflow: hidden;
+}
+
+.loc-icon {
+  width: 24rpx;
+  height: 40rpx;
+  margin-left: 40rpx;
+  margin-right: 20rpx;
+  padding-top: 20rpx;
+  padding-bottom: 20rpx;
+}
+
+.newloc-block:last-child {
+  border-bottom: 2rpx solid #f1f1f1;
+}
+
+.new-location {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 120rpx;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.new-location-nav {
+  margin:0;
+  background: #2f9bfe;
+  width: 240rpx;
+  height: 80rpx;
+  border-radius: 40rpx;
+  display: flex;
+  flex-flow: row;
+  align-items: center;
+  justify-content: center;
+}

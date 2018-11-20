@@ -15,20 +15,26 @@
   align-items: center;
   width: 100%;
   justify-content: center;
+  font-size: 30rpx;
 }
 
 .sales-block {
   width: 100%;
   display: flex;
   flex-flow: column;
+  background: #fff;
+  margin-top: 12rpx;
 }
-
+.sales-block:last-child{
+  margin-bottom: 12rpx;
+}
 .sales-detail {
   display: flex;
   align-items: center;
   justify-content: flex-start;
   height: 160rpx;
-  margin: 30rpx 40rpx;
+  padding: 30rpx 40rpx;
+  border-bottom: 2rpx solid #f1f1f1;
 }
 
 .sales-image {
@@ -39,28 +45,27 @@
 
 .sales-time {
   font-size: 28rpx;
-  width: 100%;
-  text-align: right;
 }
 
 .sales-detail1 {
   display: flex;
-  flex-flow: column;
-  height: 100%;
-  justify-content: space-evenly;
-  width: 480rpx;
+  flex-flow: row;
+  height: 60rpx;
+  justify-content: space-around;
+  width: 100%;
 }
 
 .sales-price {
   color: red;
   font-size: 28rpx;
-  width: 100%;
-  text-align: left;
 }
 
 .sales-name {
-  font-size: 30rpx;
+  font-size: 40rpx;
   overflow: hidden;
-  height: 85rpx;
-  width: 100%;
+  height: 80rpx;
+  font-weight: bold;
+  text-align: center;
+  line-height: 80rpx;
+  border-bottom: 2rpx solid #f1f1f1;
 }

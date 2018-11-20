@@ -7,7 +7,8 @@
     "pages/detail/detail",
     "pages/sales/sales",
     "pages/suggestion/suggestion",
-    "pages/location/location"
+    "pages/location/location",
+    "pages/location/new/new"
   ],
   "window":{
     "backgroundTextStyle":"light",

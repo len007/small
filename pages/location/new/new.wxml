@@ -1,0 +1,27 @@
+<form class="newloc-container" bindsubmit="saveLocation">
+  <view class="newloc-block">
+    <label for="username">收货人</label>
+    <input type='text' id="username" name="username" confirm-type="next" value="{{location['name']}}" />
+  </view>
+  <view class="newloc-block">
+    <label for="tel">手机号码</label>
+    <input type='number' id="tel" name="tel" confirm-type="next" value="{{location['tel']}}" />
+  </view>
+  <view class="newloc-block">
+    <label for="locations">所在地区</label>
+    <view class="newloc-block-locs">{{region[0]}}{{region[1]}}{{region[2]}}</view>
+    <picker name="region" mode="region" value="{{region}}" bindchange="bindRegionChange">
+      <image src="../../../img/icon/right-icon.png" class="loc-icon"></image>
+    </picker>
+  </view>
+  <view class="newloc-block">
+    <label for="location">详细地址</label>
+    <textarea id="location" name="location" confirm-type="done" value="{{location['location']}}"></textarea>
+  </view>
+  <view class="newloc-block">
+    <view class="new-location">
+      <button class="new-location-nav" bindtap='rebackList' style="background:red;">取消</button>
+      <button class="new-location-nav" formType="submit">保存</button>
+    </view>
+  </view>
+</form>

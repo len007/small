@@ -1,2 +1,19 @@
 <!--pages/location/location.wxml-->
-<text>收货地址</text>
+<view class="loc-container">
+  <view class=" loc-block " wx:for="{{locations}}" wx:for-index="idx">
+    <view class="loc-detail1 ">
+      <view class="loc-name ">{{item['name']}}</view>
+      <view class="loc-tel ">{{item['tel']}}</view>
+    </view>
+    <view class="loc-detail2 ">
+      <view class="loc-loc ">{{item['address']}}</view>
+      <image src="../../img/icon/edit-icon.png " class="loc-edit-image " data-uid="{{item['uid']}}" bindtap="toggleActionEdit"></image>
+    </view>
+  </view>
+  <view class="new-location ">
+    <view class="new-location-nav" bindtap="toggleActionAdd">
+      <image src="../../img/icon/plus-icon.png " class="new-location-nav-image "></image>
+      <span>新建收货地址</span>
+    </view>
+  </view>
+</view>
