@@ -1,14 +1,16 @@
 {
   "pages":[
-    "pages/about/about",
     "pages/index/index",
+    "pages/about/about",
     "pages/news/news",
     "pages/cart/cart",
     "pages/detail/detail",
     "pages/sales/sales",
     "pages/suggestion/suggestion",
+    "pages/addproduct/addproduct",
     "pages/location/location",
-    "pages/location/new/new"
+    "pages/location/new/new",
+    "pages/author/author"
   ],
   "window":{
     "backgroundTextStyle":"light",

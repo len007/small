@@ -1,7 +1,6 @@
 // pages/location/location.js
 const app = getApp();
 const db = wx.cloud.database();
-const query = wx.createSelectorQuery()
 
 Page({
   /**

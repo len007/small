@@ -11,7 +11,11 @@
   height: 600rpx;
   width: 100%;
 }
-
+.detail-right-icon{
+  width: 20rpx;
+  height: 30rpx;
+  justify-self: flex-end;
+}
 .detail-body {
   display: flex;
   flex-direction: column;
@@ -56,29 +60,22 @@
   color: red;
   display: flex;
   justify-content: space-between;
+  align-items: center;
   width: 100%;
 }
 
 .share-img {
-  height: 60rpx;
-  width: 60rpx;
+  height: 40rpx;
+  width: 40rpx;
 }
 
 .shared-btn {
-  margin: 0;
   display: flex;
-  width: 60rpx;
+  width: 40rpx;
   flex-direction: column;
-  font-size: 30rpx;
-  padding: 0rpx;
-  background: #fff;
-  border-width: 0rpx;
-  border-radius: 0rpx;
-  align-items: center;
-  justify-content: space-between;
-  line-height: 2;
+  font-size: 20rpx;
   color: red;
-  height: 120rpx;
+  text-align: center;
 }
 
 .price {
@@ -90,8 +87,11 @@
   flex-direction: row;
   justify-content: space-between;
   font-weight: normal;
-  align-items:center;
+  align-items: center;
+}
 
+.block3 {
+  padding: 0;
 }
 
 .block22 {
@@ -273,6 +273,5 @@
   height: 30rpx;
   border-radius: 15rpx;
   color: #fff;
-  line-height:30rpx;
-
+  line-height: 30rpx;
 }

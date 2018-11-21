@@ -14,10 +14,10 @@
       <view class="block11">{{product['name']}}</view>
       <view class="block12">
         <view class="price">￥{{product['price']}}</view>
-        <button open-type="share" class="shared-btn">
+        <view class="shared-btn" bindtap="sharePage">
           <image open-type="share" class="share-img" src="../../img/share.png"></image>
-          <p>分享</p>
-        </button>
+          <view>分享</view>
+        </view>
       </view>
     </view>
     <view class="block-detail block2">
@@ -34,7 +34,7 @@
     </view>
     <view class="block-detail block2" bindtap="openSale">
       <view>选择：规格</view>
-      <view>></view>
+      <image src="../../img/icon/right-icon.png" class="detail-right-icon"></image>
     </view>
     <view class="block-detail block3" bindtap="openSale">
       <p>商品介绍</p>
@@ -85,7 +85,7 @@
     <p style="line-height: 32rpx;">首页</p>
   </view>
   <view class="bottom1" bindtap=''>
-    <image src="../../img/mess.png" style="height:50rpx;width:50rpx;"></image>
+    <image src="../../img/news.png" style="height:50rpx;width:50rpx;"></image>
     <p style="line-height: 32rpx;">客服</p>
   </view>
   <view class="bottom1">

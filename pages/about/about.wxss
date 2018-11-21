@@ -1,3 +1,13 @@
+.userinfo-avatar{
+  width: 128rpx;
+  height: 128rpx;
+  margin: 20rpx;
+  border-radius: 50%;
+  border: 10rpx #fff solid;
+}
+.userinfo-nickname {
+  color: #fff;
+}
 .about-container {
   display: flex;
   flex-direction: column;

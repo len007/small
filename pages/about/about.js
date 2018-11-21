@@ -2,63 +2,75 @@
 const util = require('../../utils/util.js')
 //获取应用实例
 const app = getApp();
+const db = wx.cloud.database();
 
 Page({
   data: {
-    userInfo: [],
+    userInfo: null,
     navbar: [{
       name: "我的订单",
       img: "../../img/icon/sales-icon.png"
     }, {
-        name: "收货地址",
+      name: "收货地址",
       img: "../../img/icon/location-icon.png"
-    },{
-        name: "咨询与反馈",
-        img: "../../img/icon/help-icon.png"
+    }, {
+      name: "咨询与反馈",
+      img: "../../img/icon/help-icon.png"
     }]
   },
   onLoad: function() {
     if (app.globalData.userInfo) {
       this.setData({
-        userInfo: app.globalData.userInfo,
-        hasUserInfo: true,
+        userInfo: app.globalData.userInfo
       })
-    } else if (this.data.canIUse) {
-      // 由于 getUserInfo 是网络请求，可能会在 Page.onLoad 之后才返回
-      // 所以此处加入 callback 以防止这种情况
-      app.userInfoReadyCallback = res => {
-        this.setData({
-          userInfo: res.userInfo,
-          hasUserInfo: true
-        })
-      }
     } else {
-      // 在没有 open-type=getUserInfo 版本的兼容处理
-      wx.getUserInfo({
+      wx.redirectTo({
+        url: '/pages/author/author',
+      })
+    }
+    this.getAdmin();
+  },
+  getAdmin: function() {
+    var that = this;
+    if (app.globalData.openid) {
+      db.collection('admins').where({
+        openid: app.globalData.openid
+      }).get({
         success: res => {
-          app.globalData.userInfo = res.userInfo
-          this.setData({
-            userInfo: res.userInfo,
-            hasUserInfo: true
-          })
+          // console.log(res);
+          if (res.data.length > 0 && res.data[0] && res.data[0].isadmin) {
+            var navbar = that.data.navbar;
+            navbar.push({
+              name: "添加商品(限管理员)",
+              img: "../../img/icon/edit-icon.png"
+            });
+            that.setData({
+              navbar: navbar
+            })
+          }
+        },
+        fail: err => {
+          console.log(err);
         }
       })
     }
   },
-  getUserInfo: function(e) {
-    app.globalData.userInfo = e.detail.userInfo
-    this.setData({
-      userInfo: e.detail.userInfo,
-      hasUserInfo: true
-    })
-  },
-  redirectFunc: function(event){
+  redirectFunc: function(event) {
     var action = event['currentTarget']['dataset']['action'];
     var navUrl = '';
-    switch(action){
-      case 0: navUrl = "/pages/sales/sales"; break;
-      case 1: navUrl = "/pages/location/location"; break;
-      case 2: navUrl = "/pages/suggestion/suggestion"; break;
+    switch (action) {
+      case 0:
+        navUrl = "/pages/sales/sales";
+        break;
+      case 1:
+        navUrl = "/pages/location/location";
+        break;
+      case 2:
+        navUrl = "/pages/suggestion/suggestion";
+        break;
+      case 3:
+        navUrl = "/pages/addproduct/addproduct";
+        break;
     }
     wx.navigateTo({
       url: navUrl,

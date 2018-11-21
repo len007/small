@@ -1,0 +1,6 @@
+<view class="userinfo">
+    <view style="text-align:center;margin-top:20rpx;">为了正常使用</view>
+    <view style="text-align:center">需要您授权我们获取您的微信公开信息</view>
+    <view style="text-align:center;margin-bottom:20rpx;">（这些公开信息不会对您的隐私造成泄露）</view>
+    <button open-type="getUserInfo" bindgetuserinfo="getUserInfo" class="btn">获取头像昵称</button>
+  </view>

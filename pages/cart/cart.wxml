@@ -1,2 +1,28 @@
 <!--pages/cart/cart.wxml-->
-<text>购物车</text>
+
+<checkbox-group bindchange="checkboxChange">
+  <view class="cart-container">
+    <view class="cart-nav">
+      <checkbox value="all" checked="{{true}}" />
+      <view wx:if="{{action=='show'}}" bindtap="turnEdit">编辑</view>
+      <view wx:if="{{action=='edit'}}" bindtap="commitEdit">完成</view>
+    </view>
+    <view wx:for="{{carts}}" class="cart-block0" wx:for-index="idx">
+      <checkbox value="{{item['pid']}}" checked="{{true}}" />
+      <view class="cart-block">
+        <image class="cart-image" src="{{'../../img/product/'}}{{item['imgurl']}}"></image>
+        <view class="cart-detail">
+          <view>{{item['name']}}</view>
+          <view class="cart-detail1">
+            <view class="cart-price">￥{{item['unitprice']}}</view>
+            <view>
+              <view class="cart-count-btn" bindtap="cutCartsCount" style="{{cartsCount[idx]<2?'color:#f1f1f1':''}}" data-idx="{{idx}}">-</view>
+              <view class="cart-count-btn">{{cartsCount[idx]}}</view>
+              <view class="cart-count-btn" bindtap='addCartsCount' style="{{cartsCount[idx]>98?'color:#f1f1f1':''}}" data-idx="{{idx}}">+</view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</checkbox-group>

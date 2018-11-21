@@ -1,5 +1,8 @@
 <!--logs.wxml-->
-<view class="about-container">
+<view class="userinfo" wx:if="{{!hasUserInfo && canIUse}}">
+  <button open-type="getUserInfo" bindgetuserinfo="getUserInfo">获取头像昵称</button>
+</view>
+<view class="about-container" wx:else="{{!hasUserInfo && canIUse}}">
   <view class="about-block" style="background-image:url(../../img/bg-my.png);background-size:100%;">
     <image src="{{userInfo['avatarUrl']}}" class="userinfo-avatar"></image>
     <view class="userinfo-nickname">{{userInfo['nickName']}}</view>

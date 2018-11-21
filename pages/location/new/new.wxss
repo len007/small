@@ -67,11 +67,11 @@
   height: 120rpx;
   display: flex;
   align-items: center;
-  justify-content: space-evenly;
+  justify-content: center;
 }
 
 .new-location-nav {
-  margin:0;
+  margin: 0;
   background: #2f9bfe;
   width: 240rpx;
   height: 80rpx;
@@ -80,4 +80,6 @@
   flex-flow: row;
   align-items: center;
   justify-content: center;
+  margin-left: 10rpx;
+  margin-right: 10rpx;
 }

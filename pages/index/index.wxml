@@ -1,14 +1,9 @@
 <!--index.wxml-->
-<view class="body">
-  <view class="userinfo" wx:if="{{!hasUserInfo && canIUse}}">
-    <button open-type="getUserInfo" bindgetuserinfo="getUserInfo">获取头像昵称</button>
-  </view>
-  <view class="container" wx:else="{{!hasUserInfo && canIUse}}">
-    <view class="block" wx:for="{{products}}" wx:key="unique">
-      <navigator url="{{'/pages/detail/detail?id='+item.id}}" class="naviga">
-        <image src="{{item.url}}" class="btn-img"></image>
-        <block>{{item.name}}</block>
-      </navigator>
-    </view>
+<view class="index-container">
+  <view class="index-block" wx:for="{{products}}" wx:key="unique">
+    <navigator url="{{'/pages/detail/detail?pid='+item.pid}}" class="index-naviga">
+      <image src="{{'../../img/product/'}}{{item.imgurl[0]}}" class="index-btn-img"></image>
+      <block>{{item.name}}</block>
+    </navigator>
   </view>
 </view>

@@ -1,5 +1,7 @@
 /**app.wxss**/
-
+view{
+  display: flex;
+}
 .body {
   display: flex;
   flex-direction: column;
@@ -42,13 +44,4 @@
 .naviga:hover {
   cursor: pointer;
 }
-.userinfo-avatar{
-  width: 128rpx;
-  height: 128rpx;
-  margin: 20rpx;
-  border-radius: 50%;
-  border: 10rpx #fff solid;
-}
-.userinfo-nickname {
-  color: #fff;
-}
+

@@ -29,39 +29,18 @@ Page({
    */
   onLoad: function(options) {
     this.setData({
-      detailId: options.id,
+      detailId: options.pid,
       userInfo: app.globalData.userInfo,
       openid: app.globalData.openid
     });
-    var that = this;
-    db.collection('product').where({
-      pid: this.data.detailId
-    }).get({
-      success: function(res) {
-        if (res.data.length > 0) {
-          wx.setNavigationBarTitle({
-            title: res.data[0]['name'],
-          });
-          var tmpUrls = [];
-          for (var i = 0; i < res.data[0]['imgurl'].length; i++) {
-            tmpUrls.push(res.data[0]['imgurl'][i]);
-          }
-          that.setData({
-            product: res.data[0],
-            imgUrls: tmpUrls
-          });
-        }
-      }
-    });
+    this.getDetails();
     this.getCartsCount();
   },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
-  onReady: function() {
-    this.getCartsCount();
-  },
+  onReady: function() {},
 
   /**
    * 生命周期函数--监听页面显示
@@ -83,19 +62,47 @@ Page({
   onUnload: function() {
 
   },
-
+  sharePage: function() {
+    wx.showModal({
+      title: '分享转发',
+      content: '您可以通过点击右上角分享转发给好友',
+      success(res) {
+        if (res.confirm) {
+          // console.log('用户点击确定');
+        } else if (res.cancel) {
+          // console.log('用户点击取消');
+        }
+      }
+    })
+  },
   /**
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function() {
-
+    this.getDetails();
+    this.getCartsCount();
   },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function() {
-
+  getDetails: function() {
+    var that = this;
+    db.collection('product').where({
+      pid: this.data.detailId
+    }).get({
+      success: function(res) {
+        if (res.data.length > 0) {
+          wx.setNavigationBarTitle({
+            title: res.data[0]['name'],
+          });
+          var tmpUrls = [];
+          for (var i = 0; i < res.data[0]['imgurl'].length; i++) {
+            tmpUrls.push('../../img/product/' + res.data[0]['imgurl'][i]);
+          }
+          that.setData({
+            product: res.data[0],
+            imgUrls: tmpUrls
+          });
+        }
+      }
+    });
   },
   getCartsCount: function() {
     var that = this;
@@ -103,7 +110,6 @@ Page({
       openid: this.data.openid
     }).count({
       success: function(res) {
-        // console.log(res.total);
         that.setData({
           cartsCount: res.total
         })
@@ -116,7 +122,7 @@ Page({
   onShareAppMessage: function(res) {
     return {
       title: '黎川特产-' + this.data.product['name'],
-      path: '/pages/detail/detail?id=' + this.data.detailId
+      path: '/pages/detail/detail?pid=' + this.data.detailId
     }
   },
   openSale: function() {
@@ -144,7 +150,7 @@ Page({
         var product = that.data.product;
         if (action === 'a') {
           product['laudcount'] += 1
-          
+
         } else {
           product['laudcount'] -= 1
         }
@@ -153,7 +159,7 @@ Page({
           product: product
         });
         wx.showToast({
-          title: action === 'a'?'已赞':'已取消赞',
+          title: action === 'a' ? '已赞' : '已取消赞',
           icon: 'success',
           duration: 1000
         });
@@ -183,13 +189,17 @@ Page({
   addCartRecord: function() {
     wx.cloud.callFunction({
       name: "addCartRecord",
-      data: { // 这里不需要加openid，云函数里自带的
+      data: {
+        action: 'add',
         pid: this.data.detailId,
-        salesCount: this.data.salesCount
+        salesCount: this.data.salesCount,
+        imgurl: this.data.imgUrls[0],
+        name: this.data.product['name'],
+        unitprice: this.data.product['price']
       }
     }).then(res => {
-      // console.log(res);
-      if (res.result['errMsg'] === "collection.add:ok") {
+      console.log(res);
+      if (res.result['errMsg'] === "collection.add:ok" || "collection.update:ok") {
         this.setData({
           action: false
         });
@@ -201,8 +211,9 @@ Page({
         });
       }
     }).catch(err => {
+      // console.log(err);
       wx.showToast({
-        title: err,
+        title: '系统繁忙',
         icon: 'warn',
         duration: 2000
       })
